@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TheKrystalShip.KGSM.WebPush</RootNamespace>
+    <AssemblyName>TheKrystalShip.KGSM.WebPush</AssemblyName>
+
+    <!--
+      Zero package dependencies, by design, and the reason is narrower than convenience: this assembly
+      encrypts messages. Every dependency it took would be a dependency of the crypto, in every surface
+      that sends a push. Everything it needs — P-256 ECDH, HKDF, AES-GCM, ES256 — is in the BCL on net10,
+      so it takes nothing. Not even a logger: a rejection comes back in PushResult and the CALLER logs it,
+      which is also the only place that knows whose device it was.
+    -->
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+
+    <PackageId>TheKrystalShip.KGSM.WebPush</PackageId>
+    <Authors>Heisenberg</Authors>
+    <Version>1.0.0</Version>
+    <Description>
+      Web Push for KGSM surfaces: RFC 8291 message encryption over the RFC 8188 aes128gcm content
+      encoding, RFC 8292 VAPID identity and request signing, and the RFC 8030 delivery POST with the
+      one answer that means a subscription is gone. Holds no state and knows nothing about who is being
+      notified — a consumer keeps its own subscriptions, preferences and staged actions and hands this
+      an endpoint, a pair of keys and some bytes. Dependency-free and AOT-safe.
+    </Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="TheKrystalShip.KGSM.WebPush.Tests" />
+  </ItemGroup>
+
+</Project>
