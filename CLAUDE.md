@@ -41,6 +41,6 @@ push service rejects it: nothing throws, nothing is malformed, nothing arrives.
 ## Version tracking
 
 - **Version source:** `<Version>` in `src/WebPush/WebPush.csproj`.
-- Consumers pin a version from `/home/heisen/local-nuget`, so shipping a change means **repack + bump on
+- Consumers pin a version from the org's GitHub Packages feed, so shipping a change means **publish + bump on
   both sides** — a same-version repack is served stale from the NuGet cache (keyed by id+version).
 - Consumers: `kgsm-api`, `kgsm-llm`. Build both before declaring work done.
