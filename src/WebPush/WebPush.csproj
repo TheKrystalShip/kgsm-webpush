@@ -28,7 +28,7 @@
       an endpoint, a pair of keys and some bytes. Dependency-free and AOT-safe.
     </Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

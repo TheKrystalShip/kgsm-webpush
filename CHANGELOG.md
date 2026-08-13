@@ -4,6 +4,12 @@ All notable changes to `TheKrystalShip.KGSM.WebPush` are documented here.
 
 ## [Unreleased]
 
+### Changed — package license metadata is GPL-3.0-or-later
+
+`PackageLicenseExpression` now matches the repo's own `LICENSE` on every published package. Already
+published versions keep the metadata they were built with, since a published version is immutable —
+the correction reaches consumers on the next version bump.
+
 ## [1.0.0] - 2026-08-12
 
 ### Added — the Web Push protocol, as a library
