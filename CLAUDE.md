@@ -35,7 +35,7 @@ format. That is the only way the salt, record size, key-info labels and padding 
 an encoding mistake produces bytes of the right length and the wrong message, and a sender-side
 assertion cannot see it.
 
-⚠ The VAPID signature must be **fixed-width r‖s**, not DER. A DER signature is well-formed and every
+The VAPID signature must be **fixed-width r‖s**, not DER. A DER signature is well-formed and every
 push service rejects it: nothing throws, nothing is malformed, nothing arrives.
 
 ## Version tracking

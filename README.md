@@ -44,9 +44,9 @@ switch (result.Outcome)
 }
 ```
 
-⚠ **The key pair is fixed for the life of the host.** The public key is baked into every subscription a
+**The key pair is fixed for the life of the host.** The public key is baked into every subscription a
 browser creates, so rotating it silently invalidates every device already registered. Generate once,
 persist, never regenerate.
 
-⚠ **`Accepted` means the push service accepted the message.** It says nothing about whether a device
+**`Accepted` means the push service accepted the message.** It says nothing about whether a device
 ever displayed it, and no surface built on this may claim otherwise.
